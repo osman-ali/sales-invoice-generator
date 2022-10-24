@@ -2,7 +2,7 @@
  * @Created by       :Othman Ali
  * @Email            :othmanalime@gmail.com
  * @version          :1.1
- * @Date              :23-10-2023
+ * @Date              :23-10-2022
  * 
  * 
  */
@@ -143,8 +143,8 @@ public class FileOperations {
 }
 
  public void saveFile(ArrayList<sigHeader> headers) {
-        /*create new array of sigHeader to get the current invoices
-        create two strings to stroe in them the final data as string data
+        /*  https://www.stackchief.com/blog/How%20to%20read%20a%20CSV%20file%20in%20Java%20%7C%20with%20examples
+        https://stackoverflow.com/questions/61623508/store-objects-of-different-types-in-an-arraylist
         */
        //Header file name
 
@@ -153,9 +153,7 @@ public class FileOperations {
         File headerFile;
         File lineFile;
         int result;
-        /*read each invoice from the header table and save it in a new line inside invoices string
-        then read each item line inside the invoice and save it i a new line inside items string
-        */
+        // قراءة ملفات العملاء والمنتجات وتخزيها وعرضها في الجدول 
         for(sigHeader header: headers){
             String headerLines = header.getInvoicesFromTabel();
             invoices=invoices+headerLines;
@@ -167,15 +165,16 @@ public class FileOperations {
                 items = items+"\n";
             }
         }
-        //open two file chooser to save these two strings inside the desired files if they are not found
+                //فتح الملفات للقراءه والحفظ 
         
         JOptionPane.showMessageDialog(frame, "Kindly choose the Headers file then Lines file يجب اختيار ملف العملاء ثم ملف المنتجات");
         JFileChooser file = new  JFileChooser();
-        do{//donot break till the user choose the right format
+        do{ //donot break till the user choose the right format
         result = file.showSaveDialog(frame);
         if(result == JFileChooser.APPROVE_OPTION){
             headerFile = file.getSelectedFile();
-            if(headerFile.getName().contains(".csv")){//write only in the correct file
+            if(headerFile.getName().contains(".csv")){
+                    // نوع امتدات الملفات المستخدم للقراءة والكتابه 
                 FileWriter headFileWriter = null;
                 try {
                     headFileWriter = new FileWriter(headerFile);

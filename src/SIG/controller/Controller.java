@@ -2,10 +2,20 @@
  * @Created by       :Othman Ali
  * @Email            :othmanalime@gmail.com
  * @version          :1.1
- * @Date              :23-10-2023
- * 
+ * @Date              :23-10-2022
  * 
  */
+
+//اهم التعديلات المطلوب تنفيذها 
+// عدم تشغيل البرنامج اكثر من مرة 
+//حد اقصي لعدد المنجات للفاتورة  
+//تحديد قائمة مسبقة بالمنتجات 
+//تحديد الاسعار 
+//تسجيل البيانات في ملف اكسل وليس csv https://www.javatpoint.com/how-to-read-excel-file-in-java 
+//اظهار البيانات تلقائيا بعد فتح الملف 
+
+
+
 package SIG.controller;
 
 import SIG.model.FileOperations;
@@ -107,7 +117,7 @@ public class Controller implements ActionListener, ListSelectionListener {
             
         }
     }
-//create obj dialoge of classaddLineDialoge and set it visible
+        //create obj dialoge of classaddLineDialoge and set it visible
     private void newLine() {
         itemDialog = new addLineDialog(frame);
         itemDialog.setVisible(true);
@@ -129,9 +139,9 @@ public class Controller implements ActionListener, ListSelectionListener {
     }
     }
 
-//create two arrays from sigHeader and sigItem then save them in the desired file
+        //create two arrays from sigHeader and sigItem then save them in the desired file
    
-//get the invoice customer and date then create a new invoice from sigHeader class then update the tabel
+        //get the invoice customer and date then create a new invoice from sigHeader class then update the tabel
     public void addInvOk() {
       String date= invDialog.getInvoiceDate().getText();
       String customer = invDialog.getCustomerName().getText();
@@ -147,7 +157,7 @@ public class Controller implements ActionListener, ListSelectionListener {
         invDialog=null;
         
     }
-//get the invoice from by searching through its number
+            //get the invoice from by searching through its number
 public sigHeader getInvoiceByNum(int num){
     for(sigHeader inv: frame.getInvoices()){
         if(num==inv.getNum()){
@@ -161,13 +171,13 @@ public sigHeader getInvoiceByNum(int num){
     public void valueChanged(ListSelectionEvent e) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-//close the addInvoiceDialoge
+        //close the addInvoiceDialoge
     private void cancelInvoice() {
         invDialog.setVisible(false);
         invDialog.dispose();
         invDialog=null;
     }
-/*add the item line data to the table and updates it  and add this line to its invoice
+    /*add the item line data to the table and updates it  and add this line to its invoice
     and also updates the header table by get the selected invoice from the header table
     */
     private void createLine() {
@@ -193,7 +203,7 @@ public sigHeader getInvoiceByNum(int num){
         itemDialog=null;
         
     }
-//close the addLineDialoge
+        //close the addLineDialoge
     private void cancelLine() {
         itemDialog.setVisible(false);
         itemDialog.dispose();

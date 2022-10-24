@@ -2,13 +2,17 @@
  * @Created by       :Othman Ali
  * @Email            :othmanalime@gmail.com
  * @version          :1.1
- * @Date              :23-10-2023
+ * @Date              :23-10-2022
  * 
- * 
+ *
  */
 
 
-//class of sigHeader which store in it the invoice item lines, customer name, invoice number and date
+
+/*
+اجمالي الفاتورة يكون double
+
+*/
 package SIG.model;
 
 import java.util.ArrayList;
@@ -34,7 +38,7 @@ public class sigHeader {
     public double getTotalInvoice(){
         double total=0.0;
         for(sigItem item : getItems()){
-            total= total + item.getTotalLine();
+            total += item.getTotalLine();
         }
         return total;
     }
@@ -79,7 +83,7 @@ public class sigHeader {
     public double getTotal(){
         double total=0;
         for(sigItem item: getItems()){
-            total= total+ item.getTotal();
+            total=+ item.getTotal();
         }
         return total;
     }

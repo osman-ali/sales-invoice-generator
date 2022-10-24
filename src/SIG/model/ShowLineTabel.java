@@ -3,7 +3,7 @@
  * @Created by       :Othman Ali
  * @Email            :othmanalime@gmail.com
  * @version          :1.1
- * @Date              :23-10-2023
+ * @Date              :23-10-2022
  * 
  * 
  */
@@ -18,7 +18,6 @@ import javax.swing.table.AbstractTableModel;
 public class ShowLineTabel extends AbstractTableModel {
 
     private String[] colums = {"NO.", "Item Name", "Item Price", "count", "Item Total"};
-// private String[] colums = {"Num", "Item", "Unit Price", "Quantity", "Total"};
     private ArrayList<sigItem> items;
 
     public ShowLineTabel(ArrayList<sigItem> items) {
